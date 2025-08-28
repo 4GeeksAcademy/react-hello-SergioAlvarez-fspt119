@@ -3,15 +3,15 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 // components
-import { Card } from "./Card";
-import { Jumbotron } from "./Jumbotron";
-import { Navbar } from "./Navbar";
+import  Card  from "./Card";
+import  Jumbotron  from "./Jumbotron";
+import  Navbar  from "./Navbar";
 
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
 
 
-const driverObj = driver({
+export const driverObj = driver({
   showProgress: true,
   steps: [
 	  { element: '#jumbotron', popover: { title: 'Basicamente, esto es el "Jumbotron"', description: '¿Porqué se llama Jumbotron...?' } },
@@ -36,11 +36,11 @@ export const tour = () =>{
 			
 			<>
 			<Navbar></Navbar>
+			
 			<Jumbotron></Jumbotron>
 			<Card></Card>
 			</>
 	);
 };
 
-
-export default Home
+export default Home;
