@@ -1,40 +1,54 @@
-import React from 'react'
+import React from "react";
 
-
-
-import {tour} from "./Home"
-
+import { tour } from "./Home";
 
 export const Navbar = () => {
   return (
-<>
-    <nav className="navbar navbar-expand-lg bg-body-secondary">
-  <div className="container-fluid">
-    
+    <>
+      <nav className="navbar navbar-expand-lg bg-body-secondary">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
+            Navbar
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span>
+              <i className="fa-solid fa-burger"></i>
+            </span>
+          </button>
 
-    
-    <a className="navbar-brand" href="#">Navbar</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span><i class="fa-solid fa-burger"></i></span>
-    </button>
-    
-    <div className="collapse navbar-collapse " id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="main.jsx">Inicio</a>
-        </li>
-        <li className="nav-item">
-          <button className="nav-link" onClick={tour} id='rutaGuiada' >Tour DriverJS</button>
-        </li>
-      </ul>
-    </div>
+          <div
+            className="collapse navbar-collapse "
+            id="navbarSupportedContent"
+          >
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
+              <li className="nav-item">
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="main.jsx"
+                >
+                  Inicio
+                </a>
+              </li>
+              <li className="nav-item">
+                <button className="nav-link" onClick={tour} id="rutaGuiada">
+                  Tour DriverJS
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </>
+  );
+};
 
-  </div>
-</nav>
-    
-</>
-    
-  )
-}
-
-export default Navbar
+export default Navbar;

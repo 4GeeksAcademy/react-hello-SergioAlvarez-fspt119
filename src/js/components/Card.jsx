@@ -4,13 +4,16 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { tour } from "./Home";
 import { motion, scale } from "motion/react";
+import { Cards } from "./Cards";
 
 // let tour = document.getElementById("tour")
 
-export const Card = () => {
+const Card = () => {
   // logica JS
 
-  const information = [
+    AOS.init({ duration: 800, once: false });
+
+ const dataCards = [
     {
       tittle: "DriverJS",
       description:
@@ -45,61 +48,21 @@ export const Card = () => {
     },
   ];
 
-  useEffect(() => {
-    AOS.init({ duration: 800, once: false });
-  }, information);
-
   return (
-    <>
+
       <div
         className="container-fluid bg-body-secondary w-75 mt-1 rounded"
         id="cards"
       >
         <div className="row">
-          {information.map((value, index, array) => {
-            return (value = (
-              <div
-                data-aos={information[index].flow}
-                className=" mt-2 text-center d-flex col-sm-6 col-md-6 col-lg-3 "
-              >
-                <div className="card mb-2  " style={{ width: "auto" }}>
-                  <img
-                    src={information[index].src}
-                    className="card-img-top  mx-auto object-fit-cover"
-                    alt="..."
-                    style={{ height: "15rem" }}
-                  />
-
-                  <div
-                    className="card-body d-flex flex-column justify-content-between p-2"
-                    style={{ height: "20rem" }}
-                  >
-                    <h5 className="card-title">{information[index].tittle}</h5>
-
-                    <p className="card-text">
-                      {information[index].description}
-                    </p>
-                    <div className="d-flex align-items-end">
-                      <a
-                        href={information[index].link}
-                        className="btn btn-primary"
-                      >
-                        <motion.button
-                          whileTap={{ scale: 0.9 }}
-                          className="btn bg-transparent"
-                        >
-                          Ir a la documentación
-                        </motion.button>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ));
-          })}
+            {dataCards.map((value,index)=> {
+              return(
+                <Cards info={value} key={index}></Cards>
+            )})}
+              
         </div>
       </div>
-    </>
+          
   );
 };
 export default Card;
