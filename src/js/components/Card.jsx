@@ -60,7 +60,7 @@ export const Card = () => {
             return (value = (
               <div
                 data-aos={information[index].flow}
-                className=" mt-2 text-center d-flex justify-content-center align-items-center col-sm-6 col-md-6 col-lg-4 "
+                className=" mt-2 text-center d-flex col-sm-6 col-md-6 col-lg-3 "
               >
                 <div className="card mb-2  " style={{ width: "auto" }}>
                   <img
@@ -71,7 +71,7 @@ export const Card = () => {
                   />
 
                   <div
-                    className="card-body d-flex flex-column justify-content-evenly p-2"
+                    className="card-body d-flex flex-column justify-content-between p-2"
                     style={{ height: "20rem" }}
                   >
                     <h5 className="card-title">{information[index].tittle}</h5>
@@ -79,14 +79,14 @@ export const Card = () => {
                     <p className="card-text">
                       {information[index].description}
                     </p>
-                    <div className="">
+                    <div className="d-flex align-items-end">
                       <a
                         href={information[index].link}
                         className="btn btn-primary"
                       >
                         <motion.button
                           whileTap={{ scale: 0.9 }}
-                          className="btn bg-transparent "
+                          className="btn bg-transparent"
                         >
                           Ir a la documentación
                         </motion.button>
